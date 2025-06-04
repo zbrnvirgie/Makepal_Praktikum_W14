@@ -74,7 +74,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .  # Direktori root proyek sebagai konteks
-          file: ./Dockerfile/Dockerfile  # Path ke file Dockerfile di dalam konteks
+          file: ./dockerfile  # Path ke file Dockerfile di dalam konteks
           push: false
           tags: local/kalkulator-cicd:latest
 
@@ -90,7 +90,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./Dockerfile/Dockerfile
+          file: ./dockerfile
           push: false # Set 'true' untuk push ke registry (misal Docker Hub)
           tags: local/kalkulator-cicd:latest # Ganti jika push ke registry
           # Contoh jika push: ${{ secrets.DOCKERHUB_USERNAME }}/kalkulator-cicd:latest
